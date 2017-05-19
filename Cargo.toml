@@ -1,0 +1,17 @@
+[package]
+name = "tokio-amqp"
+version = "0.1.0"
+authors = ["zerosign <r1nlx0@gmail.com>"]
+
+[dependencies]
+bytes = "*"
+url = "*"
+
+serde = "*"
+# serde_hson = "*"
+
+futures = "*"
+tokio-core = "*"
+tokio-service = "*"
+tokio-io = "*"
+tokio-proto = "*"
