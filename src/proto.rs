@@ -13,14 +13,14 @@ use codec::AMQPCodec;
 
 pub struct AMQPProto;
 
-impl<T: AsyncRead + AsyncWrite + 'static> ClientProto<T> for AMQPProto {
-    type Request = Bytes;
-    type Response = Bytes;
+// impl<T: AsyncRead + AsyncWrite + 'static> ClientProto<T> for AMQPProto {
+//     type Request = Bytes;
+//     type Response = Bytes;
 
-    type Transport = Framed<T, AMQPCodec>;
-    // type BindTransport = Result<Self::Transport, io::Error>;
+//     type Transport = Framed<T, AMQPCodec>;
+//     type BindTransport = Result<Self::Transport, io::Error>;
 
-    fn bind_transport(&self, io: T) -> Self::BindTransport {
-        Ok(io.framed(AMQPCodec))
-    }
-}
+//     fn bind_transport(&self, io: T) -> Self::BindTransport {
+//         Ok(io.framed(AMQPCodec))
+//     }
+// }

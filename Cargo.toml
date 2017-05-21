@@ -6,6 +6,7 @@ authors = ["zerosign <r1nlx0@gmail.com>"]
 [dependencies]
 bytes = "*"
 url = "*"
+chrono = "*"
 
 serde = "*"
 # serde_hson = "*"

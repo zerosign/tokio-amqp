@@ -6,7 +6,9 @@ extern crate bytes;
 
 use std::net::SocketAddr;
 
+
 #[test]
 fn test_connect() {
-    let mut c = tcore::net::TcpStream::connect(("127.0.0.1", 5672));
+    let mut stream = tcore::net::TcpStream::connect(("127.0.0.1", 5672)).unwrap();
+
 }

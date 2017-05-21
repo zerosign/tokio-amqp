@@ -49,33 +49,31 @@ pub struct Limit {
     pub frame: u32
 }
 
-static GUEST : &'static Credential = Credential {
-    name: "guest".into_string(),
-    password: "guest".into_string()
-};
-
-static LOCALHOST : &'static Host = {
-    Host {
-        target: SocketAddr::from((127, 0, 0, 1), 5673),
-        vhost: "/".into_string()
-    }
-};
-
-static DEFAULT_LIMIT : &'static Limit = {
-    Limit {
-        channel: 65535,
-        frame: 131072
-    }
-};
-
 impl Default for Credential {
-    fn default() -> Credential { GUEST }
+    fn default() -> Credential {
+        Credential {
+            name: String::from("guest"),
+            password: String::from("guest")
+        }
+    }
 }
 
+/// we don't support tls yet
 impl Default for Host {
-    fn default() -> Host { LOCALHOST }
+    fn default() -> Host {
+        Host {
+            target: "127.0.0.1:5673".parse().unwrap(),
+            secure: false,
+            vhost: String::from("/")
+        }
+    }
 }
 
 impl Default for Limit {
-    fn default() -> Limit { DEFAULT_LIMIT }
+    fn default() -> Limit {
+        Limit {
+            channel: 65535,
+            frame: 131072
+        }
+    }
 }

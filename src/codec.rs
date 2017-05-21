@@ -11,19 +11,19 @@ pub struct AMQPCodec;
 //     inner: Body<String, std::io::Error>
 // }
 
-impl Decoder for AMQPCodec {
-    type Item = Frame<Bytes, Bytes, io::Error>;
-    type Error = io::Error;
+// impl Decoder for AMQPCodec {
+//     type Item = Frame<Bytes, Bytes, io::Error>;
+//     type Error = io::Error;
 
-    fn decode(&mut self, buffer: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
-    }
-}
+//     fn decode(&mut self, buffer: &mut BytesMut) -> Result<Option<Self::Item>, Self::Error> {
+//     }
+// }
 
-impl Encoder for AMQPCodec {
-    type Item = Frame<Bytes, Bytes, io::Error>;
-    type Error = io::Error;
+// impl Encoder for AMQPCodec {
+//     type Item = Frame<Bytes, Bytes, io::Error>;
+//     type Error = io::Error;
 
-    fn encode(&mut self, message: Self::Item, buffer: &mut BytesMut) -> io::Result<()> {
+//     fn encode(&mut self, message: Self::Item, buffer: &mut BytesMut) -> io::Result<()> {
 
-    }
-}
+//     }
+// }
